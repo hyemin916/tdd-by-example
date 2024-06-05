@@ -21,8 +21,9 @@ public class MoneyTest {
             this.amount = amount;
         }
 
-        public void times(final int mutiplier) {
+        public Dollar times(final int mutiplier) {
             amount = amount * mutiplier;
+            return null;
         }
     }
 }
