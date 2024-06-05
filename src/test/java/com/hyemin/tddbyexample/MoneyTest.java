@@ -11,4 +11,16 @@ public class MoneyTest {
         five.times(2);
         assertThat(10).isEqualTo(five.amount);
     }
+
+    private class Dollar {
+        public int amount;
+
+        public Dollar(final int amount) {
+
+        }
+
+        public void times(final int mutiplier) {
+
+        }
+    }
 }
