@@ -20,7 +20,7 @@ public class MoneyTest {
         }
 
         public void times(final int mutiplier) {
-            amount = amount * 2;
+            amount = amount * mutiplier;
         }
     }
 }
