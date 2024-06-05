@@ -13,7 +13,7 @@ public class MoneyTest {
     }
 
     private class Dollar {
-        public int amount;
+        public int amount = 10;
 
         public Dollar(final int amount) {
 
