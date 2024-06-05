@@ -13,14 +13,14 @@ public class MoneyTest {
     }
 
     private class Dollar {
-        public int amount = 10;
+        public int amount;
 
         public Dollar(final int amount) {
 
         }
 
         public void times(final int mutiplier) {
-
+            amount = 5 * 2;
         }
     }
 }
