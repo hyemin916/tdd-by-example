@@ -16,11 +16,11 @@ public class MoneyTest {
         public int amount;
 
         public Dollar(final int amount) {
-
+            this.amount = amount;
         }
 
         public void times(final int mutiplier) {
-            amount = 5 * 2;
+            amount = amount * 2;
         }
     }
 }
