@@ -46,12 +46,6 @@ public class MoneyTest {
         public Fran times(final int mutiplier) {
             return new Fran(amount * mutiplier);
         }
-
-        @Override
-        public boolean equals(final Object object) {
-            final Money fran = (Money) object;
-            return amount == fran.amount;
-        }
     }
 
     private class Money {
