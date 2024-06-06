@@ -13,6 +13,13 @@ public class MoneyTest {
     }
 
     @Test
+    public void testFranMultiplication() {
+        final Fran five = new Fran(5);
+        assertThat(five.times(2)).isEqualTo(new Fran(10));
+        assertThat(five.times(3)).isEqualTo(new Fran(15));
+    }
+
+    @Test
     public void testEquality() {
         assertThat(new Dollar(5)).isEqualTo(new Dollar(5));
         assertThat(new Dollar(5)).isNotEqualTo(new Dollar(6));
