@@ -49,7 +49,7 @@ public class MoneyTest {
         }
     }
 
-    private static class Money {
+    private abstract static class Money {
         protected final int amount;
 
         private Money(final int amount) {this.amount = amount;}
