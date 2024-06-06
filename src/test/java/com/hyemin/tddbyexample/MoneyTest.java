@@ -42,4 +42,22 @@ public class MoneyTest {
             return amount == dollar.amount;
         }
     }
+
+    private class Fran {
+        private final int amount;
+
+        public Fran(final int amount) {
+            this.amount = amount;
+        }
+
+        public Fran times(final int mutiplier) {
+            return new Fran(amount * mutiplier);
+        }
+
+        @Override
+        public boolean equals(final Object object) {
+            final Fran fran = (Fran) object;
+            return amount == fran.amount;
+        }
+    }
 }
