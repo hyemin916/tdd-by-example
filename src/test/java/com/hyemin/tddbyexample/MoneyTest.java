@@ -36,44 +36,34 @@ public class MoneyTest {
 
     public static class Dollar extends Money {
 
-        private final String currency;
-
         private Dollar(final int amount) {
-            super(amount);
-            currency = "USD";
+            super(amount, "USD");
         }
 
         public Money times(final int mutiplier) {
             return dollar(amount * mutiplier);
         }
-
-        public String currency() {
-            return currency;
-        }
     }
 
     private static class Fran extends Money {
 
-        private final String currency;
-
         private Fran(final int amount) {
-            super(amount);
-            currency = "CHF";
+            super(amount, "CHF");
         }
 
         public Money times(final int mutiplier) {
             return fran(amount * mutiplier);
         }
-
-        public String currency() {
-            return currency;
-        }
     }
 
     private abstract static class Money {
         protected final int amount;
+        protected final String currency;
 
-        private Money(final int amount) {this.amount = amount;}
+        private Money(final int amount, final String currency) {
+            this.amount = amount;
+            this.currency = currency;
+        }
 
         public static Dollar dollar(final int amount) {
             return new Dollar(amount);
@@ -90,5 +80,9 @@ public class MoneyTest {
         }
 
         public abstract Money times(final int amount);
+
+        public String currency() {
+            return currency;
+        }
     }
 }
