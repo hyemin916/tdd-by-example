@@ -25,6 +25,7 @@ public class MoneyTest {
         assertThat(new Dollar(5)).isNotEqualTo(new Dollar(6));
         assertThat(new Fran(5)).isEqualTo(new Fran(5));
         assertThat(new Fran(5)).isNotEqualTo(new Fran(6));
+        assertThat(new Fran(5)).isNotEqualTo(new Dollar(5));
     }
 
     private class Dollar extends Money {
