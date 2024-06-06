@@ -28,6 +28,12 @@ public class MoneyTest {
         assertThat(Money.fran(5)).isNotEqualTo(Money.dollar(5));
     }
 
+    @Test
+    public void testCurrency() {
+        assertThat("USD").isEqualTo(Money.dollar(1).currency());
+        assertThat("CHF").isEqualTo(Money.fran(1).currency());
+    }
+
     public static class Dollar extends Money {
 
         private Dollar(final int amount) {
