@@ -34,7 +34,7 @@ public class MoneyTest {
             super(amount);
         }
 
-        public Dollar times(final int mutiplier) {
+        public Money times(final int mutiplier) {
             return new Dollar(amount * mutiplier);
         }
     }
@@ -44,7 +44,7 @@ public class MoneyTest {
             super(amount);
         }
 
-        public Fran times(final int mutiplier) {
+        public Money times(final int mutiplier) {
             return new Fran(amount * mutiplier);
         }
     }
