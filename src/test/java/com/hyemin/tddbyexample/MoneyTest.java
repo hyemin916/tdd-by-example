@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class MoneyTest {
     @Test
     public void testMultiplication() {
-        final Dollar five = new Dollar(5);
+        final Dollar five = Money.dollar(5);
         assertThat(five.times(2)).isEqualTo(new Dollar(10));
         assertThat(five.times(3)).isEqualTo(new Dollar(15));
     }
@@ -28,7 +28,7 @@ public class MoneyTest {
         assertThat(new Fran(5)).isNotEqualTo(new Dollar(5));
     }
 
-    private class Dollar extends Money {
+    public static class Dollar extends Money {
 
         public Dollar(final int amount) {
             super(amount);
@@ -49,10 +49,14 @@ public class MoneyTest {
         }
     }
 
-    private class Money {
+    private static class Money {
         protected final int amount;
 
         private Money(final int amount) {this.amount = amount;}
+
+        public static Dollar dollar(final int amount) {
+            return new Dollar(amount);
+        }
 
         @Override
         public boolean equals(final Object object) {
