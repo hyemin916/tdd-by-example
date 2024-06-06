@@ -36,8 +36,11 @@ public class MoneyTest {
 
     public static class Dollar extends Money {
 
+        private final String currency;
+
         private Dollar(final int amount) {
             super(amount);
+            currency = "USD";
         }
 
         public Money times(final int mutiplier) {
@@ -45,13 +48,17 @@ public class MoneyTest {
         }
 
         public String currency() {
-            return "USD";
+            return currency;
         }
     }
 
     private static class Fran extends Money {
+
+        private final String currency;
+
         private Fran(final int amount) {
             super(amount);
+            currency = "CHF";
         }
 
         public Money times(final int mutiplier) {
@@ -59,7 +66,7 @@ public class MoneyTest {
         }
 
         public String currency() {
-            return "CHF";
+            return currency;
         }
     }
 
