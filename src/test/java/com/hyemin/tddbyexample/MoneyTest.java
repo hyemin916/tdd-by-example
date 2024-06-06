@@ -25,7 +25,7 @@ public class MoneyTest {
         assertThat(new Dollar(5)).isNotEqualTo(new Dollar(6));
     }
 
-    private class Dollar {
+    private class Dollar extends Money {
         private final int amount;
 
         public Dollar(final int amount) {
@@ -60,4 +60,6 @@ public class MoneyTest {
             return amount == fran.amount;
         }
     }
+
+    private class Money {}
 }
