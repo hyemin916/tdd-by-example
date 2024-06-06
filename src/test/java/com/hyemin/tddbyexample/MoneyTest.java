@@ -38,11 +38,9 @@ public class MoneyTest {
         }
     }
 
-    private class Fran {
-        private final int amount;
-
+    private class Fran extends Money {
         public Fran(final int amount) {
-            this.amount = amount;
+            super(amount);
         }
 
         public Fran times(final int mutiplier) {
