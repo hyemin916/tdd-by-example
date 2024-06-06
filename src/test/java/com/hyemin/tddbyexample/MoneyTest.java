@@ -63,5 +63,7 @@ public class MoneyTest {
             final Money money = (Money) object;
             return amount == money.amount && getClass().equals(money.getClass());
         }
+
+        public abstract Money times(final int amount);
     }
 }
