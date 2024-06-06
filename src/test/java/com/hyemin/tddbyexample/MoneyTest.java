@@ -21,7 +21,7 @@ public class MoneyTest {
     }
 
     private class Dollar {
-        public int amount;
+        public final int amount;
 
         public Dollar(final int amount) {
             this.amount = amount;
@@ -29,6 +29,12 @@ public class MoneyTest {
 
         public Dollar times(final int mutiplier) {
             return new Dollar(amount * mutiplier);
+        }
+
+        @Override
+        public boolean equals(final Object object) {
+            final Dollar dollar = (Dollar) object;
+            return amount == dollar.amount;
         }
     }
 }
