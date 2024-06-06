@@ -43,6 +43,10 @@ public class MoneyTest {
         public Money times(final int mutiplier) {
             return dollar(amount * mutiplier);
         }
+
+        public String currency() {
+            return "USD";
+        }
     }
 
     private static class Fran extends Money {
@@ -52,6 +56,10 @@ public class MoneyTest {
 
         public Money times(final int mutiplier) {
             return fran(amount * mutiplier);
+        }
+
+        public String currency() {
+            return "CHF";
         }
     }
 
