@@ -22,8 +22,7 @@ public class MoneyTest {
         }
 
         public Dollar times(final int mutiplier) {
-            amount = amount * mutiplier;
-            return null;
+            return new Dollar(amount * mutiplier);
         }
     }
 }
