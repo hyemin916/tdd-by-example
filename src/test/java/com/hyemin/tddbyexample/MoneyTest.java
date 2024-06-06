@@ -8,8 +8,8 @@ public class MoneyTest {
     @Test
     public void testMultiplication() {
         final Money five = Money.dollar(5);
-        assertThat(five.times(2)).isEqualTo(new Dollar(10));
-        assertThat(five.times(3)).isEqualTo(new Dollar(15));
+        assertThat(five.times(2)).isEqualTo(Dollar.dollar(10));
+        assertThat(five.times(3)).isEqualTo(Dollar.dollar(15));
     }
 
     @Test
@@ -21,21 +21,25 @@ public class MoneyTest {
 
     @Test
     public void testEquality() {
-        assertThat(new Dollar(5)).isEqualTo(new Dollar(5));
-        assertThat(new Dollar(5)).isNotEqualTo(new Dollar(6));
+        assertThat(Dollar.dollar(5)).isEqualTo(Dollar.dollar(5));
+        assertThat(Dollar.dollar(5)).isNotEqualTo(Dollar.dollar(6));
         assertThat(new Fran(5)).isEqualTo(new Fran(5));
         assertThat(new Fran(5)).isNotEqualTo(new Fran(6));
-        assertThat(new Fran(5)).isNotEqualTo(new Dollar(5));
+        assertThat(new Fran(5)).isNotEqualTo(Dollar.dollar(5));
     }
 
     public static class Dollar extends Money {
 
-        public Dollar(final int amount) {
+        private Dollar(final int amount) {
             super(amount);
         }
 
+        public static Dollar dollar(final int amount) {
+            return new Dollar(amount);
+        }
+
         public Money times(final int mutiplier) {
-            return new Dollar(amount * mutiplier);
+            return dollar(amount * mutiplier);
         }
     }
 
@@ -55,7 +59,7 @@ public class MoneyTest {
         private Money(final int amount) {this.amount = amount;}
 
         public static Dollar dollar(final int amount) {
-            return new Dollar(amount);
+            return Dollar.dollar(amount);
         }
 
         @Override
