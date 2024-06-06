@@ -37,8 +37,8 @@ public class MoneyTest {
 
         @Override
         public boolean equals(final Object object) {
-            final Money dollar = (Money) object;
-            return amount == dollar.amount;
+            final Money money = (Money) object;
+            return amount == money.amount;
         }
     }
 
